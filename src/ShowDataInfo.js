@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { DataInfoContext } from "./FilmData";
+import './showDataInfo.css'
+
 
 function ShowDataInfo() {
   const datainfo = useContext(DataInfoContext);
@@ -8,11 +10,12 @@ function ShowDataInfo() {
   for(let i = 0 ; i < data.length ; i++){
       if(searchValue === data[i].title){
           return (
-            <div>
-               <img url ={data[i].image} alt="asd"/> 
-                Name: {data[i].title}
-                Director:{data[i].director}
-                
+            <div className="info">
+               <img src ={data[i].image} alt="asd"/> 
+               <div>Name: {data[i].title}</div> 
+                <div>Director: {data[i].director}</div>   
+                <div>Release Date: {data[i].release_date}</div>     
+                <div>Time: {data[i].running_time}</div>     
             </div>
           )
 
